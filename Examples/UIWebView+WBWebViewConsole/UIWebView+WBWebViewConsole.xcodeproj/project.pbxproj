@@ -156,7 +156,6 @@
 				C6B12C9F1A8DCCBD004F2AD2 /* Sources */,
 				C6B12CA01A8DCCBD004F2AD2 /* Frameworks */,
 				C6B12CA11A8DCCBD004F2AD2 /* Resources */,
-				D7BACC4A7A260D02745DD705 /* [CP] Embed Pods Frameworks */,
 				79ED9A159922A4C339AE070F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -249,13 +248,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UIWebView+WBWebViewConsole-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		79ED9A159922A4C339AE070F /* [CP] Copy Pods Resources */ = {
@@ -264,28 +266,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-UIWebView+WBWebViewConsole/Pods-UIWebView+WBWebViewConsole-resources.sh",
+				"${PODS_ROOT}/../../../WBWebViewConsole/Resources/WBWebBrowserConsole.bundle",
+				"${PODS_ROOT}/../../../WBWebViewConsole/Supports/WBWebView/JSBridge/Resources/WBWebBrowserJSBridge.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WBWebBrowserConsole.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WBWebBrowserJSBridge.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UIWebView+WBWebViewConsole/Pods-UIWebView+WBWebViewConsole-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D7BACC4A7A260D02745DD705 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UIWebView+WBWebViewConsole/Pods-UIWebView+WBWebViewConsole-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
